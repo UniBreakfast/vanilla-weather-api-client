@@ -1,9 +1,7 @@
-const API_KEY = '3930104192f956be546d4df057894557'
-
 document.getElementById('weather-form').addEventListener('submit', function(e) {
   e.preventDefault()
   const city = document.getElementById('city').value
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`)
+  fetch(`/api/weather?city=${city}`)
     .then(response => response.json())
     .then(data => {
       const weatherResult = document.getElementById('weather-result')
